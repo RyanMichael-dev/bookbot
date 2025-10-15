@@ -14,3 +14,16 @@ def get_num_char(text):
         else:
             char_dict[char] += 1
     return char_dict
+
+def sort_on(d):
+    return d["num"]
+
+def get_sorted_dict(dict):
+    sorted_list = []
+    for ch in dict:
+        if ch.isalpha():
+            sorted_list.append({"char": ch, "num": dict[ch]})
+        else:
+            continue
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
